@@ -1,5 +1,5 @@
+const { fs } = require('fs');
 
-let btnSave = document.querySelector('#btn-save');
 
 // class for a Meal object
 class Meal {
@@ -25,77 +25,35 @@ class Meal {
         this.iron = iron;
     }
 
-    setName(input_id, val) {
-        document.getElementById();
-    }
-
-    setReflection(reflection) {
-        this.reflection = reflection;
-    }
-
-    setCalories(calories) {
-        this.calories = calories;
-    }
-
-    setTotalFat(totalFat) {
-        this.totalFat = totalFat;
-    }
-
-    setSaturatedFat(saturatedFat) {
-        this.saturatedFat = saturatedFat;
-    }
-
-    setTransFat(transFat) {
-        this.transFat = transFat;
-    }
-
-    setSodium(sodium) {
-        this.sodium = sodium;
-    }
-
-    setTotalCarb(totalCarb) {
-        this.totalCarb = totalCarb;
-    }
-
-    setTotalSugar(totalSugar) {
-        this.totalSugar = totalSugar;
-    }
-
-    setFiber(fiber) {
-        this.fiber = fiber;
-    }
-
-    setProtein(protein) {
-        this.protein = protein;
-    }
-
-    setPotassium(potassium) {
-        this.potassium = potassium;
-    }
-
-    setVitaminA(vitaminA) {
-        this.vitaminA = vitaminA;
-    }
-
-    setVitaminB(vitaminB) {
-        this.vitaminB = vitaminB;
-    }
-
-    setVitaminC(vitaminC) {
-
-        this.vitaminC = vitaminC;
-    }
-
-    setVitaminD(vitaminD) {
-        this.vitaminD = vitaminD;
-    }
-
-    setCalcium(calcium) {
-        this.calcium = calcium;
-    }
-
-    setIron(iron) {
-        this.iron = iron;
-    }
-
 }
+
+var mealsList = [];
+
+// read the meals json file to get the current meals
+fs.readFile("./meals.json", (err, mealString) => {
+    if (err) {
+        console.log("File read failed: ", err);
+        return;
+    }
+    try {
+        mealsList = JSON.parse(mealString); // the list of meals
+        console.log("meals list is: ", mealString);
+      } catch (err) {
+        console.log("Error parsing JSON string:", err);
+      }
+});
+
+// create a new meal
+currentMeal = new Meal(" ", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+let btnSave = document.querySelector('#btn-save');
+let mealName = document.querySelector('#meal-name');
+
+// when save is clicked, update the new meal's values and add it to the list of meals
+btnSave.addEventListener('click', () =>{
+    currentMeal.name = mealName;
+    mealsList.push(currentMeal);
+    fs.writeFile("./meals.json", JSON.stringify(mealsList, err => { // write the meals list back to the JSON file
+        if (err) console.log("Error writing file: ", err)
+    }))
+})
