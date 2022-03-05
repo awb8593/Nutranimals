@@ -1,4 +1,6 @@
 
+let btnSave = document.querySelector('#btn-save');
+
 // class for a Meal object
 class Meal {
     constructor(name, reflection, calories, totalFat, saturatedFat, transFat, sodium, totalCarb, fiber, totalSugar, 
@@ -23,8 +25,8 @@ class Meal {
         this.iron = iron;
     }
 
-    setName(name) {
-        this.name = name;
+    setName(input_id, val) {
+        document.getElementById();
     }
 
     setReflection(reflection) {
