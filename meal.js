@@ -1,4 +1,4 @@
-const { fs } = require('fs');
+const fs = require('fs');
 
 // class for a Meal object
 class Meal {
@@ -26,26 +26,28 @@ class Meal {
 
 }
 
-
 var mealsList = [];
 
-// read the meals json file to get the current meals
-/*
-fs.readFile("./meals.json", (err, mealString) => {
-    if (err) {
-        console.log("File read failed: ", err);
-        return;
+fs.readFile('./meals.json', 'utf-8', (err, jsonString) => {
+    if(err) {
+        console.log(err);
+    } else {
+        try {
+            const data = JSON.parse(jsonString);
+            console.log(data.name);
+        } catch (err) {
+            console.log('Error parsing JSON', err);
+        }
     }
-    try {
-        mealsList = JSON.parse(mealString); // the list of meals
-        console.log("meals list is: ", mealString);
-      } catch (err) {
-        console.log("Error parsing JSON string:", err);
-      }
+})
+
+jsonReader('./meals.json', (err, data) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(data.name);
+    }
 });
-*/
-const meal = require('./meals.json');
-console.log(meal.name);
 
 /*
 // create a new meal
