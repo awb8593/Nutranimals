@@ -1,0 +1,30 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Log test:</h1>
+    <input type="text" id="logText">
+    <br>
+    <button id="sadButton">🙁</button>
+    <button id="neutralButton">😐</button>
+    <button id="happyButton">🙂</button>
+    <!--emoji are not final-->
+    <br>
+    <button id="saveLog" onclick="saveLog()">Save log</button>
+
+    <h2>Log message:</h2>
+    <p id="logMessage"></p>
+
+
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./log.js"></script>
+  </body>
+</html>
