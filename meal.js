@@ -1,6 +1,5 @@
 const { fs } = require('fs');
 
-
 // class for a Meal object
 class Meal {
     constructor(name, reflection, calories, totalFat, saturatedFat, transFat, sodium, totalCarb, fiber, totalSugar, 
@@ -27,9 +26,11 @@ class Meal {
 
 }
 
+
 var mealsList = [];
 
 // read the meals json file to get the current meals
+/*
 fs.readFile("./meals.json", (err, mealString) => {
     if (err) {
         console.log("File read failed: ", err);
@@ -42,7 +43,11 @@ fs.readFile("./meals.json", (err, mealString) => {
         console.log("Error parsing JSON string:", err);
       }
 });
+*/
+const meal = require('./meals.json');
+console.log(meal.name);
 
+/*
 // create a new meal
 currentMeal = new Meal(" ", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -57,3 +62,4 @@ btnSave.addEventListener('click', () =>{
         if (err) console.log("Error writing file: ", err)
     }))
 })
+*/
