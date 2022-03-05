@@ -1,0 +1,20 @@
+@font-face {
+    font-family: Poppins;
+    src: url(Poppings-Medium.ttf);
+  }
+.logo{
+    height: 15%;
+    width: auto;
+
+}
+.nav{
+    color: rgb(255, 255, 255);
+    font-family: Poppins;
+}
+.navbox{
+    height: 60%;
+    background-color: rgb(219, 111, 132);
+    display: block;
+    border: 20px white solid;
+    margin-right: 10%;
+}
