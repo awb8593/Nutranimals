@@ -1,0 +1,5 @@
+#ignore macos .DS_Store files
+.DS_Store
+#ignore the out and node folder because it's too dang big
+out/
+node_modules/
