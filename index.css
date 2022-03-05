@@ -1,6 +1,5 @@
 @font-face {
     font-family: Poppins;
-    src: url(Poppings-Medium.ttf);
   }
 .logo{
     height: 15%;
@@ -9,7 +8,6 @@
 }
 .nav{
     color: rgb(255, 255, 255);
-    font-family: Poppins;
 }
 .navbox{
     height: 60%;

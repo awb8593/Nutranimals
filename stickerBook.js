@@ -16,9 +16,9 @@ fs.readFile("./meals.json", (err, mealString) => {
       }
 });
 
-let list = document.getElementById("mealsList");
+let list = document.getElementById("mealsList"); // display the list
 data.array.forEach(element => {
     let li = document.createElement("li");
     li.innerText = item;
     list.appendChild(li);
-});r
+});
