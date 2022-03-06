@@ -1,7 +1,7 @@
 {
-  "name": "Steel Pizza",
+  "name": "Unnamed Meal",
   "reflection": {
-    "message": "fdsf",
+    "message": "",
     "happiness": 0
   },
   "calories": 0,
@@ -9,7 +9,7 @@
   "saturatedFat": 0,
   "transFat": 0,
   "sodium": 0,
-  "totalCarb": "9999999999999999999999",
+  "totalCarb": 0,
   "totalSugar": 0,
   "fiber": 0,
   "protein": 0,
@@ -19,7 +19,7 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-  "iron": "10000",
-  "nutranimalImage": "./assets/tempbrick.png",
-  "nutranimalName": "Brik-Bot"
+  "iron": 0,
+  "nutranimalImage": "./assets/sad.png",
+  "nutranimalName": "Nutranimal Not Found"
 }

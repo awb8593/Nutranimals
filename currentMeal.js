@@ -48,5 +48,9 @@ jsonReader('./meals.json', (err, data) => {
         document.getElementById('vitD').innerHTML = mealToDisplay.vitaminD;
         document.getElementById('calcium').innerHTML = mealToDisplay.calcium;
         document.getElementById('iron').innerHTML = mealToDisplay.iron;
+        document.getElementById('sticker').src = mealToDisplay.nutranimalImage;
+        document.getElementById('creaturename').src = mealToDisplay.nutranimalName;
+
     }
 });
+
