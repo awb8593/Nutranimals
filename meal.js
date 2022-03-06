@@ -1,4 +1,8 @@
-const { fs } = require('fs');
+// meal.js
+"use strict";
+
+const fs = require('fs');
+
 
 // class for a Meal object
 class Meal {
@@ -26,40 +30,128 @@ class Meal {
 
 }
 
+// function to help read a json file
+function jsonReader(filepath, cb) {
+    fs.readFile(filepath, 'utf-8', (err, fileData) => {
+        if (err) {
+            return cb && cb(err);
+        }
+        try {
+            const object = JSON.parse(fileData);
+            return cb && cb(null, object);
+        } catch (err) {
+            return cb && cb(err);
+        }
+    });
+}
 
-var mealsList = [];
+// get the nutritional values
+function getNutrition() {
+    if (document.getElementById('meal-name').value){
+        var nameField = document.getElementById('meal-name').value;
+    } else { var nameField = "Unnamed Meal"; }
+    if (document.getElementById('calories').value){
+        var caloriesField = document.getElementById('calories').value;
+    } else { var caloriesField = 0; }
+    if (document.getElementById('fat').value){
+        var fatField = document.getElementById('fat').value;
+    } else { var fatField = 0; }
+    if (document.getElementById('saturatedFat').value){
+        var satField = document.getElementById('saturatedFat').value;
+    } else { var satField = 0; }
+    if (document.getElementById('transFat').value){
+        var transField = document.getElementById('transFat').value;
+    } else { var transField = 0; }
+    if (document.getElementById('sodium').value){
+        var sodiumField = document.getElementById('sodium').value;
+    } else { var sodiumField = 0; }
+    if (document.getElementById('totalCarb').value){
+        var carbField = document.getElementById('totalCarb').value;
+    } else { var carbField = 0; }
+    if (document.getElementById('totalSugar').value){
+        var sugarField = document.getElementById('totalSugar').value;
+    } else { var sugarField = 0; }
+    if (document.getElementById('fiber').value){
+        var fiberField = document.getElementById('fiber').value;
+    } else { var fiberField = 0; }
+    if (document.getElementById('protein').value){
+        var proteinField = document.getElementById('protein').value;
+    } else { var proteinField = 0; }
+    if (document.getElementById('potassium').value){
+        var potassiumField = document.getElementById('potassium').value;
+    } else { var potassiumField = 0; }
+    if (document.getElementById('vitA').value){
+        var vitAField = document.getElementById('vitA').value;
+    } else { var vitAField = 0; }
+    if (document.getElementById('vitB').value){
+        var vitBField = document.getElementById('vitB').value;
+    } else { var vitBField = 0; }
+    if (document.getElementById('vitC').value){
+        var vitCField = document.getElementById('vitC').value;
+    } else { var vitCField = 0; }
+    if (document.getElementById('vitD').value){
+        var vitDField = document.getElementById('vitD').value;
+    } else { var vitDField = 0; }
+    if (document.getElementById('calcium').value){
+        var calciumField = document.getElementById('calcium').value;
+    } else { var calciumField = 0; }
+    if (document.getElementById('iron').value){
+        var ironField = document.getElementById('iron').value;
+    } else { var ironField = 0; }
+    console.log("Meal Saved: ", nameField);
 
-// read the meals json file to get the current meals
-/*
-fs.readFile("./meals.json", (err, mealString) => {
-    if (err) {
-        console.log("File read failed: ", err);
-        return;
+    // make a new meal with the nutritional attributes
+    let newMeal = {
+        name: nameField,
+        reflection: null,
+        calories: caloriesField,
+        totalFat: fatField,
+        saturatedFat: satField,
+        transFat: transField,
+        sodium: sodiumField,
+        totalCarb: carbField,
+        totalSugar: sugarField,
+        fiber: fiberField,
+        protein: proteinField,
+        potassium: potassiumField,
+        vitaminA: vitAField,
+        vitaminB: vitBField,
+        vitaminC: vitCField,
+        vitaminD: vitDField,
+        calcium: calciumField,
+        iron: ironField
     }
-    try {
-        mealsList = JSON.parse(mealString); // the list of meals
-        console.log("meals list is: ", mealString);
-      } catch (err) {
-        console.log("Error parsing JSON string:", err);
-      }
-});
-*/
-const meal = require('./meals.json');
-console.log(meal.name);
 
-/*
-// create a new meal
-currentMeal = new Meal(" ", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    save(newMeal);
+}
+/**
+ * Just do the bare minimum to handle the click - so that you can use the other functions here without worrying about weird things happening that would happen
+ * with the click (like navigating to the other page) 
+ */
+function onClickHandler(){
+    getNutrition();
+    window.location.href = "stickerBook.html";
+}
 
-let btnSave = document.querySelector('#btn-save');
-let mealName = document.querySelector('#meal-name');
+// save the user's meal into the json file
+function save(newMeal) {
+    // reads from a json file (data = the meal in the list), updates the data, and writes back
+    jsonReader('./meals.json', (err, data) => {
+        if (err) {
+            console.log(err);
+        } else {
+            data = newMeal;
+            fs.writeFile('./meals.json', JSON.stringify(data, null, 2), err => {
+                if (err) {
+                    console.log(err);
+                }
+            });
+        }
+    });
+}
 
-// when save is clicked, update the new meal's values and add it to the list of meals
-btnSave.addEventListener('click', () =>{
-    currentMeal.name = mealName;
-    mealsList.push(currentMeal);
-    fs.writeFile("./meals.json", JSON.stringify(mealsList, err => { // write the meals list back to the JSON file
-        if (err) console.log("Error writing file: ", err)
-    }))
-})
-*/
+module.exports = { Meal }
+let submitBtn = document.getElementById('saveButton');
+if (submitBtn != null){ //squelching an error when meal gets called from stickerBook ('saveButton' is no longer in the dom)
+    submitBtn.addEventListener('click', onClickHandler);
+}

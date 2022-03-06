@@ -1,24 +1,32 @@
-const { fs } = require('fs');
+// stickerBook.js
 
-var mealsList = [];
+"use strict";
+const fs = require('fs');
+const { Meal } = require('./meal');
 
-// read the meals json file to get the current meals
-fs.readFile("./meals.json", (err, mealString) => {
-    if (err) {
-        console.log("File read failed: ", err);
-        return;
-    }
-    try {
-        data = JSON.parse(mealString); // the list of meals
-        console.log("meals list is: ", mealString);
-      } catch (err) {
-        console.log("Error parsing JSON string:", err);
+var mealToDisplay = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+// function to help read a json file (returns the meal stored in the json file)
+function jsonReader(filepath, cb) {
+  fs.readFile(filepath, 'utf-8', (err, fileData) => {
+      if (err) {
+          return cb && cb(err);
       }
-});
+      try {
+          const object = JSON.parse(fileData);
+          return cb && cb(null, object);
+      } catch (err) {
+          return cb && cb(err);
+      }
+  });
+}
 
-let list = document.getElementById("mealsList"); // display the list
-data.array.forEach(element => {
-    let li = document.createElement("li");
-    li.innerText = item;
-    list.appendChild(li);
+// read the meal to display from the JSON file
+jsonReader('./meals.json', (err, data) => {
+  if (err) {
+      console.log(err);
+  } else {
+      mealToDisplay = data;
+      document.getElementById('mealDisplayName').innerHTML = mealToDisplay.name;
+  }
 });
