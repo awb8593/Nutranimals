@@ -120,7 +120,7 @@ jsonReader('./meals.json', (err, data) => {
         // pick name based on type
         if (type == 'iron') {
             nutranName = "Brik-Bot";
-            fileLocation = './assets/tempbrick.png';
+            fileLocation = './assets/brickbot.png';
         }
         if (type == 'totalCarb') {
             nutranName = "Cattatapi";
