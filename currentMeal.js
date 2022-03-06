@@ -1,4 +1,4 @@
-// stickerBook.js
+// currentMeal.js
 
 "use strict";
 const fs = require('fs');
@@ -23,10 +23,15 @@ function jsonReader(filepath, cb) {
 
 // read the meal to display from the JSON file
 jsonReader('./meals.json', (err, data) => {
-  if (err) {
-      console.log(err);
-  } else {
-      mealToDisplay = data;
-      document.getElementById('mealDisplayName').innerHTML = mealToDisplay.name;
-  }
+    if (err) {
+        console.log(err);
+    } else {
+        mealToDisplay = data;
+        console.log("Meal: ", mealToDisplay);
+        document.getElementById('window').innerHTML = mealToDisplay.name;
+        document.getElementById('header').innerHTML = mealToDisplay.name;
+        document.getElementById('calories').innerHTML = "Calories: ", mealToDisplay.calories;
+    }
 });
+
+// update rest of the values
