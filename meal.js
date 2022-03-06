@@ -26,6 +26,21 @@ class Meal {
 
 }
 
+// function to help read a json file
+function jsonReader(filepath, cb) {
+    fs.readFile(filepath, 'utf-8', (err, fileData) => {
+        if (err) {
+            return cb && cb(err);
+        }
+        try {
+            const object = JSON.parse(fileData);
+            return cb && cb(null, object);
+        } catch (err) {
+            return cb && cb(err);
+        }
+    });
+}
+
 var mealsList = [];
 
 fs.readFile('./meals.json', 'utf-8', (err, jsonString) => {
@@ -62,27 +77,16 @@ const newMeal = {
     iron: 10
 };
 
-fs.writeFile('./newmeal.json', JSON.stringify(newMeal, null, 2), err => {
+// reads from a json file, updates the data, and writes back
+jsonReader('./meals.json', (err, data) => {
     if (err) {
         console.log(err);
     } else {
-        console.log('File succesfully written');
+        data.calories += 10;
+        fs.writeFile('./meals.json', JSON.stringify(data, null, 2), err => {
+            if (err) {
+                console.log(err);
+            }
+        });
     }
 });
-
-/*
-// create a new meal
-currentMeal = new Meal(" ", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-
-let btnSave = document.querySelector('#btn-save');
-let mealName = document.querySelector('#meal-name');
-
-// when save is clicked, update the new meal's values and add it to the list of meals
-btnSave.addEventListener('click', () =>{
-    currentMeal.name = mealName;
-    mealsList.push(currentMeal);
-    fs.writeFile("./meals.json", JSON.stringify(mealsList, err => { // write the meals list back to the JSON file
-        if (err) console.log("Error writing file: ", err)
-    }))
-})
-*/
