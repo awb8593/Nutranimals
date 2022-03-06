@@ -46,28 +46,44 @@ function jsonReader(filepath, cb) {
 // get the nutritional values
 function getNutrition() {
     var nameField = document.getElementById('meal-name').value;
+    var caloriesField = document.getElementById('calories').value;
+    var fatField = document.getElementById('fat').value;
+    var satField = document.getElementById('saturatedFat').value;
+    var transField = document.getElementById('transFat').value;
+    var sodiumField = document.getElementById('sodium').value;
+    var carbField = document.getElementById('totalCarb').value;
+    var sugarField = document.getElementById('totalSugar').value;
+    var fiberField = document.getElementById('fiber').value;
+    var proteinField = document.getElementById('protein').value;
+    var potassiumField = document.getElementById('potassium').value;
+    var vitAField = document.getElementById('vitA').value;
+    var vitBField = document.getElementById('vitB').value;
+    var vitCField = document.getElementById('vitC').value;
+    var vitDField = document.getElementById('vitD').value;
+    var calciumField = document.getElementById('calcium').value;
+    var ironField = document.getElementById('iron').value;
     console.log("Meal Saved: ", nameField);
 
     // make a new meal with the nutritional attributes
     newMeal = {
         name: nameField,
         reflection: null,
-        calories: 500,
-        totalFat: 10,
-        saturatedFat: 10,
-        transFat: 10,
-        sodium: 10,
-        totalCarb: 10,
-        totalSugar: 10,
-        fiber: 10,
-        protein: 10,
-        potassium: 10,
-        vitaminA: 10,
-        vitaminB: 10,
-        vitaminC: 10,
-        vitaminD: 10,
-        calcium: 10,
-        iron: 10
+        calories: caloriesField,
+        totalFat: fatField,
+        saturatedFat: satField,
+        transFat: transField,
+        sodium: sodiumField,
+        totalCarb: carbField,
+        totalSugar: sugarField,
+        fiber: fiberField,
+        protein: proteinField,
+        potassium: potassiumField,
+        vitaminA: vitAField,
+        vitaminB: vitBField,
+        vitaminC: vitCField,
+        vitaminD: vitDField,
+        calcium: calciumField,
+        iron: ironField
     }
 
     save(newMeal);
