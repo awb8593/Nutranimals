@@ -1,7 +1,7 @@
 {
-  "name": "Pasta",
+  "name": "Steel Pizza",
   "reflection": {
-    "message": "Kinda Bland, i just be at a hackathon",
+    "message": "fdsf",
     "happiness": 0
   },
   "calories": 0,
@@ -19,5 +19,7 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-  "iron": "2"
+  "iron": "10000",
+  "nutranimalImage": "./assets/tempbrick.png",
+  "nutranimalName": "Brik-Bot"
 }
