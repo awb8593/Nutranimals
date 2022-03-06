@@ -2,7 +2,7 @@
   "name": "Unnamed Meal",
   "reflection": {
     "message": "",
-    "happiness": 2
+    "happiness": 0
   },
   "calories": 0,
   "totalFat": 0,
@@ -19,7 +19,7 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-  "iron": "142134",
+  "iron": "999",
   "nutranimalImage": "./assets/brickbot.png",
   "nutranimalName": "Brik-Bot"
 }
