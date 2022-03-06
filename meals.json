@@ -9,7 +9,7 @@
   "saturatedFat": 0,
   "transFat": 0,
   "sodium": 0,
-  "totalCarb": 0,
+  "totalCarb": "1324",
   "totalSugar": 0,
   "fiber": 0,
   "protein": 0,
@@ -19,7 +19,7 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-  "iron": "999",
-  "nutranimalImage": "./assets/brickbot.png",
-  "nutranimalName": "Brik-Bot"
+  "iron": 0,
+  "nutranimalImage": "./assets/cattatapi.png",
+  "nutranimalName": "Cattatapi"
 }
