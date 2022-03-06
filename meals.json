@@ -2,14 +2,14 @@
   "name": "Unnamed Meal",
   "reflection": {
     "message": "",
-    "happiness": 2
+    "happiness": 0
   },
   "calories": 0,
   "totalFat": 0,
   "saturatedFat": 0,
   "transFat": 0,
   "sodium": 0,
-  "totalCarb": 0,
+  "totalCarb": "1324",
   "totalSugar": 0,
   "fiber": 0,
   "protein": 0,
@@ -19,7 +19,7 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-  "iron": "142134",
-  "nutranimalImage": "./assets/brickbot.png",
-  "nutranimalName": "Brik-Bot"
+  "iron": 0,
+  "nutranimalImage": "./assets/cattatapi.png",
+  "nutranimalName": "Cattatapi"
 }
