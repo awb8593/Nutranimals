@@ -40,21 +40,19 @@ function jsonReader(filepath, cb) {
         }
     });
 }
+// get the nutritional values
+function getNutrition() {
+    var nameField = document.getElementById('meal-name').value;
+    console.log(nameField);
+}
 
-var mealsList = [];
+// save the user's meal into the json file
+function save() {
+    
+}
 
-fs.readFile('./meals.json', 'utf-8', (err, jsonString) => {
-    if(err) {
-        console.log(err);
-    } else {
-        try {
-            const data = JSON.parse(jsonString);
-            console.log(data.name);
-        } catch (err) {
-            console.log('Error parsing JSON', err);
-        }
-    }
-});
+var saveButton = document.getElementById('saveButton');
+saveButton.addEventListener('click', getNutrition);
 
 const newMeal = {
     name: 'New Meal',
