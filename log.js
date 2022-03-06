@@ -72,6 +72,6 @@ function saveLog() {
  */
  function onClickHandler(){
     saveLog();
-    window.location.href = "stickerBook.html";
+    window.location.href = "nutranimal.html";
 }
 

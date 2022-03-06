@@ -1,9 +1,15 @@
+// rng.js
+
+"use strict";
+
+const fs = require('fs');
+
+document.getElementById("continue").addEventListener("click", onClickHandler);
 
 /** 
  * returns what type of nutranimal gets picked, based on the values that we take in
 */
-"use strict";
-function pickANutranimal(calories, totalFat, saturatedFat, transFat, sodium, totalCarb, fiber, totalSugar, 
+function pickAType(calories, totalFat, saturatedFat, transFat, sodium, totalCarb, fiber, totalSugar, 
     protein, potassium, vitaminA, vitaminB, vitaminC, vitaminD, calcium, iron){ //Yes, this function has 16 arguments. Too bad. (for less jank, make meal.js store these as key-value pair)
     let valuesArr = // weighting based on daily value that these are more comparable https://www.netrition.com/rdi_page.html. The units are different for all of them
     [
@@ -66,6 +72,22 @@ function pickANutranimal(calories, totalFat, saturatedFat, transFat, sodium, tot
         case valuesArr[15]:
             return "iron";
     }
+}
+
+/**
+ * determines what Nutranimal is chosen based on the determined type
+ */
+function chooseNutranimal() {
+    
+}
+
+/**
+ * Just do the bare minimum to handle the click - so that you can use the other functions here without worrying about weird things happening that would happen
+ * with the click (like navigating to the other page) 
+ */
+ function onClickHandler(){
+    chooseNutranimal();
+    window.location.href = "stickerBook.html";
 }
 
 //TODO: less jank
