@@ -1,10 +1,10 @@
 // stickerBook.js
 
+"use strict";
 const fs = require('fs');
 const { Meal } = require('./meal');
 
-
-mealToDisplay = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+var mealToDisplay = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 // function to help read a json file (returns the meal stored in the json file)
 function jsonReader(filepath, cb) {
@@ -27,7 +27,6 @@ jsonReader('./meals.json', (err, data) => {
       console.log(err);
   } else {
       mealToDisplay = data;
+      document.getElementById('mealDisplayName').innerHTML = mealToDisplay.name;
   }
 });
-
-document.getElementById('mealDisplayName').innerHTML = mealToDisplay.name;
