@@ -28,6 +28,6 @@ function saveLog() {
         }
     }
     let newLog = new Log(document.getElementById("logText").value,happiness);
-    document.getElementById("logMessage").innerHTML = newLog.message.concat(happiness);
+    document.getElementById("logMessage").innerHTML = newLog.message.concat(happiness); //rather than just echoing to the screen, write to json
 
 }
