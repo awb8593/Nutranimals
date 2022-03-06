@@ -1,0 +1,29 @@
+.logo{
+    height: 130px;
+    width: auto;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
+.nav{
+    color: rgb(255, 255, 255);
+    font-family:'Poppins', sans-serif;
+    font-size: 100% ;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-decoration-line: none;
+}
+.navbox{
+    height: 60%;
+    background-color: rgb(219, 111, 132);
+    display: block;
+    border: 20px white solid;
+    margin-right: 10%;
+}
+
+.bodydiv{
+    background-color: rgb(226, 255, 218);
+}
+.bodytext{
+    font-family:'Poppins', sans-serif;
+}
