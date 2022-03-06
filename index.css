@@ -13,11 +13,8 @@
     text-decoration-line: none;
 }
 .navbox{
-    height: 60%;
     background-color: rgb(219, 111, 132);
-    display: block;
-    margin-top: -20px;
-    margin-left: 1.6%;
+    margin-top: -1.5em;
     
 
 }
@@ -31,7 +28,6 @@
     width: 64%;
     height: 50%;
     margin-top: 85px;
-    overflow: scroll;
    
 }
 .bodytext{
@@ -54,9 +50,11 @@
     margin-top: 4%;
     
 }
-.svg{
+.headerpng{
     width: 100%;
-    margin-bottom: -30px;
-    margin-left: -15px;
-    margin-top: -400px;
+}
+@media screen and (max-width:1222px) {
+    .logo{
+        width: 50%;
+    }
 }
