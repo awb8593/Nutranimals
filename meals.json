@@ -1,7 +1,7 @@
 {
-  "name": "fnaf pasta",
+  "name": "Steel Pizza",
   "reflection": {
-    "message": "fnaf",
+    "message": "fdsf",
     "happiness": 0
   },
   "calories": 0,
@@ -9,7 +9,7 @@
   "saturatedFat": 0,
   "transFat": 0,
   "sodium": 0,
-  "totalCarb": "1000000",
+  "totalCarb": 0,
   "totalSugar": 0,
   "fiber": 0,
   "protein": 0,
@@ -19,7 +19,7 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-  "iron": "50",
-  "nutranimalImage": "./assets/cattatapi.png",
-  "nutranimalName": "Cattatapi"
+  "iron": "10000",
+  "nutranimalImage": "./assets/tempbrick.png",
+  "nutranimalName": "Brik-Bot"
 }

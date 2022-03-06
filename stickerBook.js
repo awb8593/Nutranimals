@@ -28,5 +28,6 @@ jsonReader('./meals.json', (err, data) => {
   } else {
       mealToDisplay = data;
       document.getElementById('mealDisplayName').innerHTML = mealToDisplay.name;
+      document.getElementById('sticker').src = mealToDisplay.nutranimalImage;
   }
 });
