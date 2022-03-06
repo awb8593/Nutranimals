@@ -9,12 +9,13 @@
     font-weight: 500;
     font-size: 145% ;
     margin-left: 1%;
-    margin-right: 1%;
+    margin-right: 3em;
     text-decoration-line: none;
 }
 .navbox{
     background-color: rgb(219, 111, 132);
-    margin-top: -1.5em;
+    margin-top: -3.5em;
+    margin-right: 3em;
     
 
 }
@@ -26,28 +27,31 @@
     margin-bottom: 5%;
     display: block;
     width: 64%;
-    height: 50%;
+    height: 30em;
     margin-top: 85px;
    
 }
 .bodytext{
     font-family:'Poppins', sans-serif;
     font-weight: 100;
-    width: 50%;
-    margin-left: 30%;
+    width: 20em;
+    margin-left: 10em;
     margin-right: 7%;
     display: block;
     text-indent: 50px;
     font-size: 130%;
     position: relative;
+    top: 30px;
 
 }
 .subtitles{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 160%;
-    margin-left: 17%;
-    margin-top: 4%;
+    margin-left: 5em;
+    position: relative;
+    top: 30px;
+    bottom: 25px;
     
 }
 .headerpng{
