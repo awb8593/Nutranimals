@@ -30,6 +30,7 @@ jsonReader('./meals.json', (err, data) => {
         console.log("Meal: ", mealToDisplay);
         document.title = mealToDisplay.name;
         document.getElementById('header').innerHTML = mealToDisplay.name;
+        document.getElementById('reflect').innerHTML = mealToDisplay.reflection.message;
         // update rest of the values
         document.getElementById('calories').innerHTML = mealToDisplay.calories;
         document.getElementById('totalFat').innerHTML = mealToDisplay.totalFat;
