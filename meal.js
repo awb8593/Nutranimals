@@ -39,13 +39,34 @@ fs.readFile('./meals.json', 'utf-8', (err, jsonString) => {
             console.log('Error parsing JSON', err);
         }
     }
-})
+});
 
-jsonReader('./meals.json', (err, data) => {
+const newMeal = {
+    name: 'New Meal',
+    reflection: null,
+    calories: 500,
+    totalFat: 10,
+    saturatedFat: 10,
+    transFat: 10,
+    sodium: 10,
+    totalCarb: 10,
+    totalSugar: 10,
+    fiber: 10,
+    protein: 10,
+    potassium: 10,
+    vitaminA: 10,
+    vitaminB: 10,
+    vitaminC: 10,
+    vitaminD: 10,
+    calcium: 10,
+    iron: 10
+};
+
+fs.writeFile('./newmeal.json', JSON.stringify(newMeal, null, 2), err => {
     if (err) {
         console.log(err);
     } else {
-        console.log(data.name);
+        console.log('File succesfully written');
     }
 });
 
