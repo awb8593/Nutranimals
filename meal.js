@@ -45,23 +45,57 @@ function jsonReader(filepath, cb) {
 
 // get the nutritional values
 function getNutrition() {
-    var nameField = document.getElementById('meal-name').value;
-    var caloriesField = document.getElementById('calories').value;
-    var fatField = document.getElementById('fat').value;
-    var satField = document.getElementById('saturatedFat').value;
-    var transField = document.getElementById('transFat').value;
-    var sodiumField = document.getElementById('sodium').value;
-    var carbField = document.getElementById('totalCarb').value;
-    var sugarField = document.getElementById('totalSugar').value;
-    var fiberField = document.getElementById('fiber').value;
-    var proteinField = document.getElementById('protein').value;
-    var potassiumField = document.getElementById('potassium').value;
-    var vitAField = document.getElementById('vitA').value;
-    var vitBField = document.getElementById('vitB').value;
-    var vitCField = document.getElementById('vitC').value;
-    var vitDField = document.getElementById('vitD').value;
-    var calciumField = document.getElementById('calcium').value;
-    var ironField = document.getElementById('iron').value;
+    if (document.getElementById('meal-name').value){
+        var nameField = document.getElementById('meal-name').value;
+    } else { var nameField = "Unnamed Meal"; }
+    if (document.getElementById('calories').value){
+        var caloriesField = document.getElementById('calories').value;
+    } else { var caloriesField = 0; }
+    if (document.getElementById('fat').value){
+        var fatField = document.getElementById('fat').value;
+    } else { var fatField = 0; }
+    if (document.getElementById('saturatedFat').value){
+        var satField = document.getElementById('saturatedFat').value;
+    } else { var satField = 0; }
+    if (document.getElementById('transFat').value){
+        var transField = document.getElementById('transFat').value;
+    } else { var transField = 0; }
+    if (document.getElementById('sodium').value){
+        var sodiumField = document.getElementById('sodium').value;
+    } else { var sodiumField = 0; }
+    if (document.getElementById('totalCarb').value){
+        var carbField = document.getElementById('totalCarb').value;
+    } else { var carbField = 0; }
+    if (document.getElementById('totalSugar').value){
+        var sugarField = document.getElementById('totalSugar').value;
+    } else { var sugarField = 0; }
+    if (document.getElementById('fiber').value){
+        var fiberField = document.getElementById('fiber').value;
+    } else { var fiberField = 0; }
+    if (document.getElementById('protein').value){
+        var proteinField = document.getElementById('protein').value;
+    } else { var proteinField = 0; }
+    if (document.getElementById('potassium').value){
+        var potassiumField = document.getElementById('potassium').value;
+    } else { var potassiumField = 0; }
+    if (document.getElementById('vitA').value){
+        var vitAField = document.getElementById('vitA').value;
+    } else { var vitAField = 0; }
+    if (document.getElementById('vitB').value){
+        var vitBField = document.getElementById('vitB').value;
+    } else { var vitBField = 0; }
+    if (document.getElementById('vitC').value){
+        var vitCField = document.getElementById('vitC').value;
+    } else { var vitCField = 0; }
+    if (document.getElementById('vitD').value){
+        var vitDField = document.getElementById('vitD').value;
+    } else { var vitDField = 0; }
+    if (document.getElementById('calcium').value){
+        var calciumField = document.getElementById('calcium').value;
+    } else { var calciumField = 0; }
+    if (document.getElementById('iron').value){
+        var ironField = document.getElementById('iron').value;
+    } else { var ironField = 0; }
     console.log("Meal Saved: ", nameField);
 
     // make a new meal with the nutritional attributes
