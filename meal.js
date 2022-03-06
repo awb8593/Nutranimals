@@ -88,11 +88,8 @@ function save(newMeal) {
             });
         }
     });
-
-    // redirect the user to the next page (Will change to Reflection Page later)
-    document.location.href = "stickerBook.html";
-
 }
 
-var saveButton = document.getElementById('saveButton');
-saveButton.addEventListener('click', getNutrition);
+module.exports = { Meal }
+var submitBtn = document.getElementById('saveButton');
+submitBtn.addEventListener('click', getNutrition);
