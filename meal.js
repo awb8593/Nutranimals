@@ -1,3 +1,5 @@
+// meal.js
+
 const fs = require('fs');
 
 // class for a Meal object
@@ -40,10 +42,11 @@ function jsonReader(filepath, cb) {
         }
     });
 }
+
 // get the nutritional values
 function getNutrition() {
     var nameField = document.getElementById('meal-name').value;
-    console.log("name: ", nameField);
+    console.log("Meal Saved: ", nameField);
 
     // make a new meal with the nutritional attributes
     newMeal = {
