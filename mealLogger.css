@@ -12,6 +12,7 @@
 }
 .navbox{
     background-color: rgb(219, 111, 132);
+    margin-top: -3em;
 }
 #saveButton{
     padding: 1em;
@@ -29,3 +30,11 @@
     position: relative;
     margin: 2em;
     }
+
+h1{
+        margin-left: 15em;
+        margin-right: 15em;
+        width: 20em;
+        font-family: 'Poppins', sans-serif;
+        color: rgb(116, 154, 114);
+ }
