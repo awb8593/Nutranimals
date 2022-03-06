@@ -5,10 +5,11 @@
 const { Meal } = require('./meal');
 const fs = require('fs');
 const { type } = require('os');
+const { debug } = require('console');
 
 document.getElementById("continue").addEventListener("click", onClickHandler);
 
-var mealToWrite = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null);
+var mealToWrite = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '');
 
 // function to help read a json file (returns the meal stored in the json file)
 function jsonReader(filepath, cb) {
@@ -121,14 +122,14 @@ jsonReader('./meals.json', (err, data) => {
             nutranName = "Brik-Bot";
             fileLocation = './assets/tempbrick.png';
         }
-        /*
-        let nutra = {
-            nutranName: nutranName,
-            image: fileLocation
+        if (type == 'totalCarb') {
+            nutranName = "Cattatapi";
+            fileLocation = './assets/cattatapi.png'
         }
-        mealToWrite.nutranimal = nutra;
-        */
+        mealToWrite.nutranimalImage = fileLocation;
+        mealToWrite.nutranimalName = nutranName;
         data = mealToWrite;
+        console.log(data);
         document.getElementById('nutranName').innerHTML = nutranName;
         document.getElementById('nutranImage').src = fileLocation;
         fs.writeFile('./meals.json', JSON.stringify(data, null, 2), err => {

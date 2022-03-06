@@ -4,7 +4,7 @@
 const fs = require('fs');
 const { Meal } = require('./meal');
 
-var mealToDisplay = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, null);
+var mealToDisplay = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '');
 
 // function to help read a json file (returns the meal stored in the json file)
 function jsonReader(filepath, cb) {
