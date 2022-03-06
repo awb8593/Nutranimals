@@ -130,7 +130,7 @@ function getNutrition() {
  */
 function onClickHandler(){
     getNutrition();
-    window.location.href = "stickerBook.html";
+    window.location.href = "log.html";
 }
 
 // save the user's meal into the json file
