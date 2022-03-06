@@ -1,4 +1,9 @@
-document.getElementById("saveLog").addEventListener("click", saveLog);
+// log.js
+"use strict";
+
+const fs = require('fs');
+
+document.getElementById("saveLog").addEventListener("click", onClickHandler);
 class Log {
     /**
      * Constructor for a log message
@@ -10,6 +15,22 @@ class Log {
         this.happiness = newHappiness;
     }
 }
+
+// function to help read a json file
+function jsonReader(filepath, cb) {
+    fs.readFile(filepath, 'utf-8', (err, fileData) => {
+        if (err) {
+            return cb && cb(err);
+        }
+        try {
+            const object = JSON.parse(fileData);
+            return cb && cb(null, object);
+        } catch (err) {
+            return cb && cb(err);
+        }
+    });
+}
+
 /**
  * Use this on all user text input
  * @param {string} userInput 
@@ -19,15 +40,38 @@ function stripTags(userInput){
     return userInput.replace(/(<([^>]+)>)/gi, ""); //https://css-tricks.com/snippets/javascript/strip-html-tags-in-javascript/
 
 }
+
 function saveLog() {
     let happinessButtons = document.getElementsByName('happinessButtons');
     let happiness = -1; // -1 should never happen
-    for (i = 0; i < happinessButtons.length; i++){
+    for (let i = 0; i < happinessButtons.length; i++){
         if(happinessButtons[i].checked){
             happiness = i;
         }
     }
     let newLog = new Log(document.getElementById("logText").value,happiness);
-    document.getElementById("logMessage").innerHTML = newLog.message.concat(happiness); //rather than just echoing to the screen, write to json
+    jsonReader('./meals.json', (err, data) => {
+        if (err) {
+            console.log(err);
+        } else {
+            data.reflection = newLog;
+            fs.writeFile('./meals.json', JSON.stringify(data, null, 2), err => {
+                if (err) {
+                    console.log(err);
+                }
+            });
+            console.log(data);
+        }
+    });
 
 }
+
+/**
+ * Just do the bare minimum to handle the click - so that you can use the other functions here without worrying about weird things happening that would happen
+ * with the click (like navigating to the other page) 
+ */
+ function onClickHandler(){
+    saveLog();
+    window.location.href = "stickerBook.html";
+}
+
