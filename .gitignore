@@ -3,3 +3,4 @@
 #ignore the out and node folder because it's too dang big
 out/
 node_modules/
+meal.js
