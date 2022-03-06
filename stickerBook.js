@@ -4,7 +4,7 @@
 const fs = require('fs');
 const { Meal } = require('./meal');
 
-var mealToDisplay = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+var mealToDisplay = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '');
 
 // function to help read a json file (returns the meal stored in the json file)
 function jsonReader(filepath, cb) {
@@ -28,5 +28,6 @@ jsonReader('./meals.json', (err, data) => {
   } else {
       mealToDisplay = data;
       document.getElementById('mealDisplayName').innerHTML = mealToDisplay.name;
+      document.getElementById('sticker').src = mealToDisplay.nutranimalImage;
   }
 });

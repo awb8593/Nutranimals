@@ -2,7 +2,6 @@
 "use strict";
 
 const fs = require('fs');
-
 document.getElementById("saveLog").addEventListener("click", onClickHandler);
 class Log {
     /**
@@ -72,6 +71,6 @@ function saveLog() {
  */
  function onClickHandler(){
     saveLog();
-    window.location.href = "stickerBook.html";
+    window.location.href = "nutranimal.html";
 }
 

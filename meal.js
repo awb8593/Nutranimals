@@ -7,7 +7,7 @@ const fs = require('fs');
 // class for a Meal object
 class Meal {
     constructor(name, reflection, calories, totalFat, saturatedFat, transFat, sodium, totalCarb, fiber, totalSugar, 
-        protein, potassium, vitaminA, vitaminB, vitaminC, vitaminD, calcium, iron) {
+        protein, potassium, vitaminA, vitaminB, vitaminC, vitaminD, calcium, iron, nutranimalImage, nutranimalName) {
         this.name = name;
         this.reflection = reflection;
         this.calories = calories;
@@ -26,6 +26,8 @@ class Meal {
         this.vitaminD = vitaminD;
         this.calcium = calcium;
         this.iron = iron;
+        this.nutranimalImage = nutranimalImage;
+        this.nutranimalName = nutranimalName;
     }
 
 }
@@ -119,7 +121,9 @@ function getNutrition() {
         vitaminC: vitCField,
         vitaminD: vitDField,
         calcium: calciumField,
-        iron: ironField
+        iron: ironField,
+        nutranimalImage: '',
+        nutranimalName: ''
     }
 
     save(newMeal);

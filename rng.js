@@ -1,9 +1,35 @@
+// rng.js
+
+"use strict";
+
+const { Meal } = require('./meal');
+const fs = require('fs');
+const { type } = require('os');
+const { debug } = require('console');
+
+document.getElementById("continue").addEventListener("click", onClickHandler);
+
+var mealToWrite = new Meal("", null, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '');
+
+// function to help read a json file (returns the meal stored in the json file)
+function jsonReader(filepath, cb) {
+    fs.readFile(filepath, 'utf-8', (err, fileData) => {
+        if (err) {
+            return cb && cb(err);
+        }
+        try {
+            const object = JSON.parse(fileData);
+            return cb && cb(null, object);
+        } catch (err) {
+            return cb && cb(err);
+        }
+    });
+  }
 
 /** 
  * returns what type of nutranimal gets picked, based on the values that we take in
 */
-"use strict";
-function pickANutranimal(calories, totalFat, saturatedFat, transFat, sodium, totalCarb, fiber, totalSugar, 
+function pickAType(calories, totalFat, saturatedFat, transFat, sodium, totalCarb, fiber, totalSugar, 
     protein, potassium, vitaminA, vitaminB, vitaminC, vitaminD, calcium, iron){ //Yes, this function has 16 arguments. Too bad. (for less jank, make meal.js store these as key-value pair)
     let valuesArr = // weighting based on daily value that these are more comparable https://www.netrition.com/rdi_page.html. The units are different for all of them
     [
@@ -67,6 +93,52 @@ function pickANutranimal(calories, totalFat, saturatedFat, transFat, sodium, tot
             return "iron";
     }
 }
+
+/**
+ * Just do the bare minimum to handle the click - so that you can use the other functions here without worrying about weird things happening that would happen
+ * with the click (like navigating to the other page) 
+ */
+ function onClickHandler(){
+    window.location.href = "stickerBook.html";
+}
+
+/*
+let nutranName;
+let fileLocation;
+*/
+
+// read the meal from the JSON file and add the Nutranimal to it
+jsonReader('./meals.json', (err, data) => {
+    if (err) {
+        console.log(err);
+    } else {
+        mealToWrite = data;
+        let nutranName = "Nutranimal Not Found";
+        let fileLocation = './assets/sad.png';
+        let type = pickAType(data.calories, data.totalFat, data.saturatedFat, data.transFat, data.sodium, data.totalCarb, data.fiber, data.totalSugar, data. protein, data.potassium, data.vitaminA, data.vitaminB, data.vitaminC, data.vitaminD, data.calcium, data.iron);
+
+        // pick name based on type
+        if (type == 'iron') {
+            nutranName = "Brik-Bot";
+            fileLocation = './assets/tempbrick.png';
+        }
+        if (type == 'totalCarb') {
+            nutranName = "Cattatapi";
+            fileLocation = './assets/cattatapi.png'
+        }
+        mealToWrite.nutranimalImage = fileLocation;
+        mealToWrite.nutranimalName = nutranName;
+        data = mealToWrite;
+        console.log(data);
+        document.getElementById('nutranName').innerHTML = nutranName;
+        document.getElementById('nutranImage').src = fileLocation;
+        fs.writeFile('./meals.json', JSON.stringify(data, null, 2), err => {
+            if (err) {
+                console.log(err);
+            }
+        });
+    }
+});
 
 //TODO: less jank
 //TODO: make rng random(when there is more than one animal for nutrition value).
