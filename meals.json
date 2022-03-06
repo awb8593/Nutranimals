@@ -1,15 +1,15 @@
 {
-  "name": "Pasta",
+  "name": "Unnamed Meal",
   "reflection": {
-    "message": "Kinda Bland, i just be at a hackathon",
-    "happiness": 0
+    "message": "asfawef",
+    "happiness": 2
   },
   "calories": 0,
   "totalFat": 0,
   "saturatedFat": 0,
   "transFat": 0,
   "sodium": 0,
-  "totalCarb": 0,
+  "totalCarb": "9999999999999999999999",
   "totalSugar": 0,
   "fiber": 0,
   "protein": 0,
@@ -19,5 +19,5 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-  "iron": "2"
+  "iron": 0
 }
