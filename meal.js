@@ -1,6 +1,8 @@
 // meal.js
+"use strict";
 
 const fs = require('fs');
+
 
 // class for a Meal object
 class Meal {
@@ -99,7 +101,7 @@ function getNutrition() {
     console.log("Meal Saved: ", nameField);
 
     // make a new meal with the nutritional attributes
-    newMeal = {
+    let newMeal = {
         name: nameField,
         reflection: null,
         calories: caloriesField,
@@ -122,6 +124,14 @@ function getNutrition() {
 
     save(newMeal);
 }
+/**
+ * Just do the bare minimum to handle the click - so that you can use the other functions here without worrying about weird things happening that would happen
+ * with the click (like navigating to the other page) 
+ */
+function onClickHandler(){
+    getNutrition();
+    window.location.href = "stickerBook.html";
+}
 
 // save the user's meal into the json file
 function save(newMeal) {
@@ -141,5 +151,7 @@ function save(newMeal) {
 }
 
 module.exports = { Meal }
-var submitBtn = document.getElementById('saveButton');
-submitBtn.addEventListener('click', getNutrition);
+let submitBtn = document.getElementById('saveButton');
+if (submitBtn != null){ //squelching an error when meal gets called from stickerBook ('saveButton' is no longer in the dom)
+    submitBtn.addEventListener('click', onClickHandler);
+}
