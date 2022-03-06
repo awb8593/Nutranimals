@@ -1,15 +1,8 @@
 {
-<<<<<<< HEAD
-  "name": "Unnamed Meal",
-  "reflection": {
-    "message": "asfawef",
-    "happiness": 2
-=======
   "name": "Steel Pizza",
   "reflection": {
     "message": "fdsf",
     "happiness": 0
->>>>>>> refs/remotes/origin/master
   },
   "calories": 0,
   "totalFat": 0,
@@ -26,11 +19,7 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-<<<<<<< HEAD
-  "iron": 0
-=======
   "iron": "10000",
   "nutranimalImage": "./assets/tempbrick.png",
   "nutranimalName": "Brik-Bot"
->>>>>>> refs/remotes/origin/master
 }
