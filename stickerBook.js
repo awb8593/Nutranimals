@@ -27,7 +27,6 @@ jsonReader('./meals.json', (err, data) => {
       console.log(err);
   } else {
       mealToDisplay = data;
+      document.getElementById('mealDisplayName').innerHTML = mealToDisplay.name;
   }
 });
-
-document.getElementById('mealDisplayName').innerHTML = mealToDisplay.name;
