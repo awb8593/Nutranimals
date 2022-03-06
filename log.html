@@ -1,0 +1,42 @@
+<!--index.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hide-radio.css">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Log test:</h1>
+    <input type="text" id="logText">
+    <br>
+    <!-- https://stackoverflow.com/questions/17541614/use-images-instead-of-radio-buttons -->
+    <!-- Temporary logos -->
+    <label>
+        <input type="radio" name="happinessButtons" value="happy" checked>
+        <img src="assets/happy.png" alt="Happy">
+    </label>
+    <label>
+        <input type="radio" name="happinessButtons" value="neutral">
+        <img src="assets/neutral.png" alt="Neutral">
+    </label>
+    <label>
+        <input type="radio" name="happinessButtons" value="sad">
+        <img src="assets/sad.png" alt="Sad">
+    </label>
+    <br>
+    <button id="saveLog">Save log</button>
+
+    <h2>Log message:</h2>
+    <p id="logMessage"></p>
+
+
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./log.js"></script>
+  </body>
+</html>
