@@ -1,9 +1,6 @@
 {
-  "name": "Boi",
-  "reflection": {
-    "message": "chee",
-    "happiness": 0
-  },
+  "name": "df",
+  "reflection": null,
   "calories": 0,
   "totalFat": 0,
   "saturatedFat": 0,
@@ -19,6 +16,6 @@
   "vitaminC": 0,
   "vitaminD": 0,
   "calcium": 0,
-  "iron": 0,
+  "iron": "222",
   "nutranimal": null
 }

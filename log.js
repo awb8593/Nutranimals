@@ -2,7 +2,6 @@
 "use strict";
 
 const fs = require('fs');
-
 document.getElementById("saveLog").addEventListener("click", onClickHandler);
 class Log {
     /**
