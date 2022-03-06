@@ -46,11 +46,34 @@
     width: 200px;
     height:auto;
     margin-left: 20%;
-    margin-right: 20%;
+  
     margin-top: 5%;
     margin-bottom: 5%;
     border: rgb(226, 255, 218) 25px solid;
 }
 .imgco{
-    float:left;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 70px;
+    width: 33%;
 }
+.words{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+    text-indent: 50px;
+    width: 46%;
+    margin-left: 115px;
+    margin-right: 10%;
+}
+.column {
+    float: left;
+    width: 33%;
+  }
+
+  .row:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
